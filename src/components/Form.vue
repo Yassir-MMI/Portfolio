@@ -6,22 +6,22 @@ import { supabase } from "@/supabase";
 import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
-const Film = ref ({});
-const route = useRoute('/maisons/edit/[[id]]');
+const films = ref ({});
+const route = useRoute('/films/edit/[[id]]');
 
 async function upsertFilm(dataForm: any, node: { setErrors: (arg0: any[]) => void; }) {
-    const { data, error } = await supabase.from("Film").upsert(dataForm).select("id");
+    const { data, error } = await supabase.from("Films").upsert(dataForm).select("id");
     if (error) node.setErrors([error.message])
     else {
         console.log("data :",data);
-        router.push({name:"/maisons/edit/[[id]]", params:{id: data[0].id}});
+        router.push({name:"/films/edit/[[id]]", params:{id: data[0].id}});
     }
 }
 
 if (route.params.id) {
-    const { data, error } = await supabase.from("Film").select("*").eq("id", route.params.id).single();
+    const { data, error } = await supabase.from("Films").select("*").eq("id", route.params.id).single();
     if (error) console.error(error);
-    else Film.value = data;
+    else films.value = data;
 }
 </script>
 
@@ -31,10 +31,10 @@ if (route.params.id) {
             <h2 class="text-2xl">
                 Résultat (Prévisualisation)
             </h2>
-            <AfficheFilm v-bind="Film" />
+            <AfficheFilm v-bind="films" />
         </div>
         <div class="p-2">
-            <FormKit @submit="upsertFilm" type="form" v-model="Film"
+            <FormKit @submit="upsertFilm" type="form" v-model="films"
             :config="{
                 classes: {
                     input: 'p-1 rounded border-gray-300 shadow-sm border',
@@ -42,11 +42,10 @@ if (route.params.id) {
                     outer: 'py-2',
                     },
                 }">
-                <FormKit name="nom_film" label="nom du Film" />
-                <FormKit name="description_film" label="adresse" />
-                <FormKit name="annee_film" type="number" label="prix" />
-                <FormKit name="note" type="checkbox" label="mettre en valeur" />
-                <FormKit name="img_film" label="image" />
+                <FormKit name="nom_film" label="Titre du film" />
+                <FormKit name="description_film" label="Description du film" />
+                <FormKit name="note" type="number" label="Note /10" />
+                <FormKit name="img_film" label="Images du film" />
             </FormKit>
         </div>
     </div>

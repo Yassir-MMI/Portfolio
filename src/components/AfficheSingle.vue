@@ -1,20 +1,18 @@
-<script setup lang="ts">
+
+<script setup>
 import { useRoute } from 'vue-router/auto';
 import { defineProps } from 'vue';
-import type { SchemaFilm } from '@/types';
 import { supabase } from '@/supabase';
-const route = useRoute('/maisons/[id]');
-defineProps<SchemaFilm>()
-let {data : film, error} = await supabase
-    .from('Films')
-    .select('*')
-    .eq('id', route.params.id)
-    .single();
+const route = useRoute('/films/[id]');
+import type { Database, Tables } from '@/supabase-types';
+defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'Celebrite'>[]} & {Genre:Tables<'Genre'>[]} & {Saga:Tables<'Saga'>[]} & {Variante:Tables<'Variante'>} & {Support:Tables<'Support'>} & {Plateforme:Tables<'Plateforme'>}>()
 </script>
 
 <template>
     <div>
-        <h2>{{ nom_film }}</h2>
+        <h2>{{ titre_film }}</h2>
         <p>{{ description_film }}</p>
+        <p v-for="uneCelebrite in Celebrite">{{uneCelebrite.nom_celebrite }}</p>
+        <RouterLink :to="`/celebrite/${id}`">test</RouterLink>
     </div>
 </template>
