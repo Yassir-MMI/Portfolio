@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import AfficheMaison from '@/components/AfficheMaison.vue';
+  import AfficheFilm from '@/components/AfficheFilm.vue';
 </script>
 
 <template>

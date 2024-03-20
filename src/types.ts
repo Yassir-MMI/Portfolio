@@ -1,12 +1,9 @@
 const { defineSlots, defineEmits, defineExpose, defineModel, defineOptions, withDefaults, } = await import('vue');
-export interface SchemaOffreMaison {
+export interface SchemaFilm {
 id?: string;
-nomMaison: string;
-prix: number;
-favori: boolean;
-image: string;
-nbrChambres: number;
-nbrSDB: number;
-adresse: string;
-surface: string;
+nom_film: string;
+img_film: string;
+description_film: string;
+annee_film: number;
+note: number;
 }
