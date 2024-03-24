@@ -55,7 +55,7 @@ console.log(supabase);
 <style scoped>
 @font-face {
   font-family: 'Poppins';
-  src: url('@/assets/font/Poppins/Poppins-Regular.ttf') format('ttf'),
+  src: url('@/assets/fonts/Poppins/Poppins-Regular.ttf') format('ttf'),
   /* Ajoutez d'autres variantes de police si nécessaire */
 }
 
