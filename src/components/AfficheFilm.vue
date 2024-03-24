@@ -11,7 +11,7 @@ defineProps <Database["public"]["Tables"]["Projets"]["Row"] >()
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{titre}}</div>
                 <p class="text-gray-700 text-base">
-                {{description}}
+                {{description_card}}
                 </p>
             </div>
         </div>

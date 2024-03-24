@@ -9,6 +9,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 // @ts-ignore
 globalThis.supabase = supabase
 
+/*
 export const user = ref(null);
 async function fetchUser() {
   const { data } = await supabase.auth.getUser();
@@ -19,4 +20,4 @@ async function fetchUser() {
 }
 
 // Invoquer fetchUser directement pour initialiser l'état de l'utilisateur
-fetchUser();
+fetchUser(); */
