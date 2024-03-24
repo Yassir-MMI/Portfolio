@@ -9,81 +9,27 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      basket: {
+      Projets: {
         Row: {
-          bande: string | null
-          empeigne: string | null
+          description_card: string | null
           id: number
-          lacet: string | null
-          languette: string | null
-          oeillet: string | null
-          semelle: string | null
-          trimestre: string | null
+          img: string | null
+          lien: string | null
+          titre: string | null
         }
         Insert: {
-          bande?: string | null
-          empeigne?: string | null
+          description_card?: string | null
           id?: number
-          lacet?: string | null
-          languette?: string | null
-          oeillet?: string | null
-          semelle?: string | null
-          trimestre?: string | null
+          img?: string | null
+          lien?: string | null
+          titre?: string | null
         }
         Update: {
-          bande?: string | null
-          empeigne?: string | null
+          description_card?: string | null
           id?: number
-          lacet?: string | null
-          languette?: string | null
-          oeillet?: string | null
-          semelle?: string | null
-          trimestre?: string | null
-        }
-        Relationships: []
-      }
-      Commune: {
-        Row: {
-          commune_quartier: string | null
-          id: number
-          nom_commune: string | null
-        }
-        Insert: {
-          commune_quartier?: string | null
-          id?: number
-          nom_commune?: string | null
-        }
-        Update: {
-          commune_quartier?: string | null
-          id?: number
-          nom_commune?: string | null
-        }
-        Relationships: []
-      }
-      Films: {
-        Row: {
-          annee_film: number | null
-          description_film: string | null
-          id: number
-          img_film: string | null
-          nom_film: string | null
-          note: number | null
-        }
-        Insert: {
-          annee_film?: number | null
-          description_film?: string | null
-          id?: number
-          img_film?: string | null
-          nom_film?: string | null
-          note?: number | null
-        }
-        Update: {
-          annee_film?: number | null
-          description_film?: string | null
-          id?: number
-          img_film?: string | null
-          nom_film?: string | null
-          note?: number | null
+          img?: string | null
+          lien?: string | null
+          titre?: string | null
         }
         Relationships: []
       }

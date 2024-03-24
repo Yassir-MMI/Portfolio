@@ -14,4 +14,9 @@ app.use(
 )
 app.use(plugin, defaultConfig);
 
-app.mount('#app')
+// Add Scroll Reveal
+const script = document.createElement('script');
+script.src = 'https://unpkg.com/scrollreveal';
+document.body.appendChild(script);
+
+app.mount('#app');
