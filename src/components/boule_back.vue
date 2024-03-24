@@ -1,6 +1,12 @@
-<
+<template>
+  <div class="thing">
+    <div class="ring ring--1"></div>
+    <div class="ring ring--2"></div>
+    <div class="ring ring--3"></div>
+  </div>
+</template>
 
-<style>
+<style scoped>
 *, *:before, *:after {
   padding: 0;
   margin: 0;
@@ -39,21 +45,21 @@ body {
   border-bottom-color: transparent;
   border-left-width: 0px;
   animation: spin 1s infinite linear;
+}
+.ring--1 {
+  --r: rotateY(0);
+  transform: translate(-50%, -50%) rotateZ(0deg);
+}
+.ring--2 {
+  --r: rotateY(-90deg);
+  transform: translate(-50%, -50%) var(--r);
+  animation-delay: calc(1s * .75);
+}
+.ring--3 {
+  --r: rotateX(-90deg);
+  transform: translate(-50%, -50%) rotateX(-90deg);
+  animation-delay: calc(1s * .5);
   
-  &--1 {
-    --r: rotateY(0);
-    transform: translate(-50%, -50%) rotateZ(0deg);
-  }
-  &--2 {
-    --r: rotateY(-90deg);
-    transform: translate(-50%, -50%) var(--r);
-    animation-delay: calc(1s * .75);
-  }
-  &--3 {
-    --r: rotateX(-90deg);
-    transform: translate(-50%, -50%) rotateX(-90deg);
-    animation-delay: calc(1s * .5);
-  }
 }
 
 @keyframes spin {
