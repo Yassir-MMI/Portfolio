@@ -1,44 +1,40 @@
 <script setup lang=ts>
 import type AfficheFilm from '@/components/AfficheFilm.vue';
 import { supabase } from '@/supabase';
-import boule_back from '@/components/boule_back.vue';
 console.log(supabase);
 
 </script>
 
 <template>
   <main>
-    
-    <section id="profile" class="min-w-max">
-      <img class="min-w-max avatar" src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/Avatar%20(2).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvQXZhdGFyICgyKS5wbmciLCJpYXQiOjE3MTEyNjI2NjUsImV4cCI6MTc0Mjc5ODY2NX0.lhaPSbDNIgKo5mE-HXKBjxJ07QwpAf7dQkvYYF163Jg&t=2024-03-24T06%3A44%3A25.143Z" alt="John Doe profile picture" />
-      <div class="section__text">
-        <h1 class="title">Yassir Ouadghiri</h1>
-        <boule_back/>
-        <p class="section__text__p2">Développeur Web</p>
-        <div class="btn-container ">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-          Curriculum vitæ
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/linkedin.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbGlua2VkaW4ucG5nIiwiaWF0IjoxNzExMjUzNzkwLCJleHAiOjE3NDI3ODk3OTB9.OJFe70zQyK-DVrZ62HUuBybw8QEYD7yjv69A1QW4GRw&t=2024-03-24T04%3A16%3A29.905Z"
-            alt="LinkedIn"
-            class="icon">          
+      <section id="profile" class="min-w-max section_profil">
+        <img class="min-w-max max-h-80  transition transform hover:scale-110" src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/Avatar%20(3).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvQXZhdGFyICgzKS5wbmciLCJpYXQiOjE3MTEzMDgzNzUsImV4cCI6MTc0Mjg0NDM3NX0.dVRpEkB4CD8kSeRq7DMVKOnuSXaj1F63OB9I7B2Vnik&t=2024-03-24T19%3A26%3A15.525Z" alt="John Doe profile picture" />
+        <div class="section__text">
+          <h1 class="title">Yassir Ouadghiri</h1>
+          <p class="section__text__p2">Développeur Web</p>
+          <div class="btn-container ">
+            <button
+              class="btn btn-color-2"
+              onclick="window.open('./assets/resume-example.pdf')"
+            >
+            Curriculum vitæ
+            </button>
+            <button class="btn btn-color-1" onclick="location.href='./contact'">
+              Contact Info
+            </button>
+          </div>
+          <div id="socials-container">
             <img
-            src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/github.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvZ2l0aHViLnBuZyIsImlhdCI6MTcxMTI1MzgxNiwiZXhwIjoxNzQyNzg5ODE2fQ.1p1X3-sX5DLlpntOi5i_4fZazJhwoOv9cPkW3eReCYQ&t=2024-03-24T04%3A16%3A56.728Z"
-            alt="Github "
-            class="icon"/>
+              src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/linkedin.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbGlua2VkaW4ucG5nIiwiaWF0IjoxNzExMjUzNzkwLCJleHAiOjE3NDI3ODk3OTB9.OJFe70zQyK-DVrZ62HUuBybw8QEYD7yjv69A1QW4GRw&t=2024-03-24T04%3A16%3A29.905Z"
+              alt="LinkedIn"
+              class="icon">          
+              <img
+              src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/github.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvZ2l0aHViLnBuZyIsImlhdCI6MTcxMTI1MzgxNiwiZXhwIjoxNzQyNzg5ODE2fQ.1p1X3-sX5DLlpntOi5i_4fZazJhwoOv9cPkW3eReCYQ&t=2024-03-24T04%3A16%3A56.728Z"
+              alt="Github "
+              class="icon"/>
+          </div>
         </div>
-      </div>
     </section>
-
 
     <div class="login-box">
       <form>
@@ -74,8 +70,6 @@ html {
 p {
   color: rgb(85, 85, 85);
 }
-
-/* souris */
 
 
 /* Boutton */
@@ -204,9 +198,6 @@ section {
 
 /* PROFILE SECTION */
 
-.avatar {
-  margin-left: -88px;
-}
 #profile {
   display: flex;
   justify-content: center;
@@ -306,4 +297,12 @@ section {
   gap: 1rem;
 }
 
+/* bg */
+.section_profil {
+margin: 0;
+padding: 0;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239e6bef' fill-opacity='0.5'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-size: contain;
+
+}
 </style>
