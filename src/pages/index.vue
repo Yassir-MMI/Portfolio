@@ -1,6 +1,7 @@
 <script setup lang=ts>
 import type AfficheFilm from '@/components/AfficheFilm.vue';
 import { supabase } from '@/supabase';
+import boule_back from '@/components/boule_back.vue';
 console.log(supabase);
 
 </script>
@@ -12,6 +13,7 @@ console.log(supabase);
       <img class="min-w-max avatar" src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/Avatar%20(2).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvQXZhdGFyICgyKS5wbmciLCJpYXQiOjE3MTEyNjI2NjUsImV4cCI6MTc0Mjc5ODY2NX0.lhaPSbDNIgKo5mE-HXKBjxJ07QwpAf7dQkvYYF163Jg&t=2024-03-24T06%3A44%3A25.143Z" alt="John Doe profile picture" />
       <div class="section__text">
         <h1 class="title">Yassir Ouadghiri</h1>
+        <boule_back/>
         <p class="section__text__p2">Développeur Web</p>
         <div class="btn-container ">
           <button
