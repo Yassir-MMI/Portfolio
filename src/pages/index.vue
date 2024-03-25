@@ -18,7 +18,7 @@ let {data : tableaufilm, error} = await supabase
         <p class="section__text__p2">Développeur Web</p>
         <div class="btn-container">
             <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
-                Curriculum vitæ
+                Voir mon CV
             </button>
             <button class="btn btn-color-1" onclick="location.href='./contact'">
                 Contact Info
@@ -126,7 +126,9 @@ let {data : tableaufilm, error} = await supabase
     <div>
       <p class="section__text__p1">Naviguer à travers</p>
       <h1 class="title mb-10 font-bold">Mes Projets</h1>
-       <div class="grid grid-cols-3 gap-4"><AfficheFilm v-for="film in tableaufilm" v-bind="film" /></div>
+      <div class="grid grid-cols-3 gap-4">
+        <AfficheFilm v-for="film in tableaufilm" v-bind="film" />
+      </div>
     </div>
 
     <section id="contact">
@@ -135,11 +137,11 @@ let {data : tableaufilm, error} = await supabase
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img
-            src="./assets/email.png"
+            src="#"
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+          <p><a href="mailto:yassir.ouadghiri@gmail.com">Example@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img
