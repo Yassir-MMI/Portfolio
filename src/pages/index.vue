@@ -145,7 +145,7 @@ let {data : tableaufilm, error} = await supabase
         </div>
         <div class="contact-info-container">
           <img
-            src="./assets/linkedin.png"
+            src="#"
             alt="LinkedIn icon"
             class="icon contact-icon"
           />
