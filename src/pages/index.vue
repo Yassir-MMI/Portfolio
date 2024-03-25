@@ -310,7 +310,7 @@ a,
 /* SECTION Avatar */
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: auto;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
