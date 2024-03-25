@@ -1,40 +1,134 @@
 <script setup lang=ts>
-import type AfficheFilm from '@/components/AfficheFilm.vue';
+import AfficheFilm from '@/components/AfficheFilm.vue';
+import type { Database, Tables } from '@/supabase-types';
+defineProps <Database["public"]["Tables"]["Projets"]["Row"] >()
 import { supabase } from '@/supabase';
-console.log(supabase);
 
+let {data : tableaufilm, error} = await supabase
+    .from('Projets')
+    .select('*');
 </script>
 
 <template>
   <main>
-      <section id="profile" class="min-w-max section_profil">
-        <img class="min-w-max max-h-80  transition transform hover:scale-110" src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/Avatar%20(3).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvQXZhdGFyICgzKS5wbmciLCJpYXQiOjE3MTEzMDgzNzUsImV4cCI6MTc0Mjg0NDM3NX0.dVRpEkB4CD8kSeRq7DMVKOnuSXaj1F63OB9I7B2Vnik&t=2024-03-24T19%3A26%3A15.525Z" alt="John Doe profile picture" />
-        <div class="section__text">
-          <h1 class="title">Yassir Ouadghiri</h1>
-          <p class="section__text__p2">Développeur Web</p>
-          <div class="btn-container ">
-            <button
-              class="btn btn-color-2"
-              onclick="window.open('./assets/resume-example.pdf')"
-            >
-            Curriculum vitæ
+    <section id="profile" class="min-w-max section_profil flex flex-col items-center lg:flex-row sm:h-max ">
+    <img class="section__pic-container transition transform hover:scale-110 lg:mr-32 lg:mt-6" src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/Avatar%20(3).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvQXZhdGFyICgzKS5wbmciLCJpYXQiOjE3MTEzMDgzNzUsImV4cCI6MTc0Mjg0NDM3NX0.dVRpEkB4CD8kSeRq7DMVKOnuSXaj1F63OB9I7B2Vnik&t=2024-03-24T19%3A26%3A15.525Z" alt="John Doe profile picture" />
+    <div class="section__text lg:text-left">
+        <h1 class="title mt-2">Yassir Ouadghiri</h1>
+        <p class="section__text__p2">Développeur Web</p>
+        <div class="btn-container">
+            <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
+                Curriculum vitæ
             </button>
             <button class="btn btn-color-1" onclick="location.href='./contact'">
-              Contact Info
+                Contact Info
             </button>
+        </div>
+        <div id="socials-container" class="mt-4 lg:mt-0">
+            <img src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/linkedin.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbGlua2VkaW4ucG5nIiwiaWF0IjoxNzExMjUzNzkwLCJleHAiOjE3NDI3ODk3OTB9.OJFe70zQyK-DVrZ62HUuBybw8QEYD7yjv69A1QW4GRw&t=2024-03-24T04%3A16%3A29.905Z" alt="LinkedIn" class="icon mr-2">
+            <img src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/github.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvZ2l0aHViLnBuZyIsImlhdCI6MTcxMTI1MzgxNiwiZXhwIjoxNzQyNzg5ODE2fQ.1p1X3-sX5DLlpntOi5i_4fZazJhwoOv9cPkW3eReCYQ&t=2024-03-24T04%3A16%3A56.728Z" alt="Github" class="icon"/>
+        </div>
+    </div>
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Découvrez mon</p>
+      <h1 class="title mb-10">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container mb-10">
+            <h2 class="experience-sub-title">Développement Frontend</h2>
+            <div class="article-container">
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>HTML</h3>
+                  <p class="italic">Confirmé</p>
+                </div>
+              </article>
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>CSS</h3>
+                  <p class="italic">Confirmé</p>
+                </div>
+              </article>
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>JavaScript</h3>
+                  <p class="italic">Intermédiaire</p>
+                </div>
+              </article>
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>TypeScript</h3>
+                  <p class="italic">Confirmé</p>
+                </div>
+              </article>
+            </div>
+            <hr class="fine-line">
           </div>
-          <div id="socials-container">
-            <img
-              src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/linkedin.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbGlua2VkaW4ucG5nIiwiaWF0IjoxNzExMjUzNzkwLCJleHAiOjE3NDI3ODk3OTB9.OJFe70zQyK-DVrZ62HUuBybw8QEYD7yjv69A1QW4GRw&t=2024-03-24T04%3A16%3A29.905Z"
-              alt="LinkedIn"
-              class="icon">          
-              <img
-              src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/github.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvZ2l0aHViLnBuZyIsImlhdCI6MTcxMTI1MzgxNiwiZXhwIjoxNzQyNzg5ODE2fQ.1p1X3-sX5DLlpntOi5i_4fZazJhwoOv9cPkW3eReCYQ&t=2024-03-24T04%3A16%3A56.728Z"
-              alt="Github "
-              class="icon"/>
+          
+          <div class="details-container mb-10">
+            <h2 class="experience-sub-title">Développement Backend </h2>
+            <div class="article-container">
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>PocketBase</h3>
+                  <p class="italic">Basique</p>
+                </div>
+              </article>
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>Node JS</h3>
+                  <p class="italic">Basique</p>
+                </div>
+              </article>
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>SupaBase</h3>
+                  <p class="italic">Intermédiaire</p>
+                </div>
+              </article>
+              <article>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24">
+                  <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 10.874 21.803984 9.7942031 21.458984 8.7832031 L 19.839844 10.402344 C 19.944844 10.918344 20 11.453 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 13.633 4 15.151922 4.4938906 16.419922 5.3378906 L 17.851562 3.90625 C 16.203562 2.71225 14.185 2 12 2 z M 21.292969 3.2929688 L 11 13.585938 L 7.7070312 10.292969 L 6.2929688 11.707031 L 11 16.414062 L 22.707031 4.7070312 L 21.292969 3.2929688 z"></path>
+                </svg>
+                <div>
+                  <h3>Git</h3>
+                  <p class="italic">Confirmé</p>
+                </div>
+              </article>
+            </div>
+            <hr class="fine-line">
           </div>
         </div>
+      </div>
     </section>
+
+    <div>
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+       <div class="grid grid-cols-3 gap-4"><AfficheFilm v-for="film in tableaufilm" v-bind="film" /></div>
+    </div>
 
     <div class="login-box">
       <form>
@@ -69,8 +163,16 @@ html {
 
 p {
   color: rgb(85, 85, 85);
+  font-family: 'Poppins', monospace;
 }
 
+h1 {
+  color: rgb(85, 85, 85);
+  font-family: 'Jost', monospace;
+}
+section {
+  margin-top: 20px;
+}
 
 /* Boutton */
 
@@ -183,7 +285,7 @@ a,
   }
 }
 
-/* SECTION */
+/* SECTION Avatar */
 section {
   padding-top: 4vh;
   height: 96vh;
@@ -199,17 +301,16 @@ section {
 /* PROFILE SECTION */
 
 #profile {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  height: 80vh;
+  height: auto;
 }
 
 .section__pic-container {
   display: flex;
   height: 400px;
   width: 400px;
-  margin: auto 0;
 }
 
 .section__text {
@@ -240,6 +341,44 @@ section {
   justify-content: center;
   margin-top: 1rem;
   gap: 1rem;
+}
+
+/* EXPERIENCE SECTION */
+
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+}
+
+article .icon {
+  cursor: default;
 }
 
 /* ICONS */
@@ -305,4 +444,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-size: contain;
 
 }
+
+.fine-line {
+    border: 0;
+    height: 1.5px;
+    background-color: #000; /* Couleur de votre choix */
+    margin: 10px 0; /* Marge au-dessus et en dessous de la ligne */
+}
+
+
 </style>

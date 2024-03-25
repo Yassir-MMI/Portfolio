@@ -7,19 +7,13 @@
   <nav class="shadow shadow-gray-300 w-100 px-8 md:px-auto">
     <div class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
       <!-- Logo -->
-      <div class="text-indigo-500 md:order-1">
-        <!-- Heroicon - Chip Outline -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-        </svg>
-      </div>
+
+      <img style="width: 8%; height: auto; " src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/logo-portfolioV1.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbG9nby1wb3J0Zm9saW9WMS5wbmciLCJpYXQiOjE3MTEzMjkzMjIsImV4cCI6MTc0Mjg2NTMyMn0.nyYVw632oKHb46diGCgu4V-KMwmeBeI78cBaeQPiayg&t=2024-03-25T01%3A15%3A23.340Z" alt="Logo Yassir Ouadghiri">
       <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
         <ul class="flex font-semibold justify-between gap-auto lg:gap-20 md:gap-20">
-          <router-link to="/" class="text-black md:px-4 md:py-2 hover:text-indigo-500">À propos de moi</router-link>
-          <router-link to="/projets" class="text-black md:px-4 md:py-2 hover:text-indigo-400">Mes Projets</router-link>
-          <router-link to="/contact" class="text-black md:px-4 md:py-2 hover:text-indigo-400">Contact</router-link>
+          <router-link to="/" class="text-black md:px-4 md:py-2 hover:text-indigo-400 hover:underline">À propos de moi</router-link>
+          <router-link to="/projets" class="text-black md:px-4 md:py-2 hover:text-indigo-400 hover:underline">Mes Projets</router-link>
+          <router-link to="/contact" class="text-black md:px-4 md:py-2 hover:text-indigo-400 hover:underline">Contact</router-link>
         </ul>
       </div>
 
@@ -33,6 +27,59 @@
       </div>
     </div>
   </nav>
+  <div class="scroller"></div>
 </template>
+
+<style>
+.scroller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  z-index: 1000;
+  background: linear-gradient(
+    to right,
+    #000,
+    #AF60FF
+  );
+  background-repeat: no-repeat;
+  background-size: 0;
+  transform-origin: left;
+  animation: scroll linear;
+  animation-timeline: scroll();
+  animation-range-start: cover 100px;
+  animation-range-end: cover 100%;
+}
+
+.scroll
+{
+  animation: slide linear;
+  animation-timeline: view();
+  animation-range-start: cover 0%;
+  animation-range-end: cover 30%;
+}
+
+@keyframes scroll {
+  from {
+    background-size: 0% 5px;
+  }
+  to {
+    background-size: 100% 5px;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+</style>
+
 
 
