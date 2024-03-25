@@ -32,7 +32,7 @@ let {data : tableaufilm, error} = await supabase
     </section>
     <section id="experience">
       <p class="section__text__p1">Découvrez mon</p>
-      <h1 class="title mb-10">Experience</h1>
+      <h1 class="title mb-10 font-bold">Experience</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container mb-10">
@@ -123,12 +123,34 @@ let {data : tableaufilm, error} = await supabase
         </div>
       </div>
     </section>
-
     <div>
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
+      <p class="section__text__p1">Naviguer à travers</p>
+      <h1 class="title mb-10 font-bold">Mes Projets</h1>
        <div class="grid grid-cols-3 gap-4"><AfficheFilm v-for="film in tableaufilm" v-bind="film" /></div>
     </div>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
 
     <div class="login-box">
       <form>
@@ -168,7 +190,7 @@ p {
 
 h1 {
   color: rgb(85, 85, 85);
-  font-family: 'Jost', monospace;
+  font-family: 'Jost', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 section {
   margin-top: 20px;
@@ -442,7 +464,6 @@ margin: 0;
 padding: 0;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239e6bef' fill-opacity='0.5'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 background-size: contain;
-
 }
 
 .fine-line {
@@ -452,5 +473,42 @@ background-size: contain;
     margin: 10px 0; /* Marge au-dessus et en dessous de la ligne */
 }
 
+/* Contact */
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
 
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: (250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
+  cursor: default;
+}
+
+.email-icon {
+  height: 2.5rem;
+}
 </style>
