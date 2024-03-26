@@ -12,7 +12,7 @@ let {data : tableaufilm, error} = await supabase
 <template>
   <main>
     <section id="profile" class="min-w-max section_profil flex flex-col items-center lg:flex-row sm:h-max ">
-    <img class="section__pic-container transition transform hover:scale-110 lg:mr-32 lg:mt-6" src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/Avatar%20(3).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvQXZhdGFyICgzKS5wbmciLCJpYXQiOjE3MTEzMDgzNzUsImV4cCI6MTc0Mjg0NDM3NX0.dVRpEkB4CD8kSeRq7DMVKOnuSXaj1F63OB9I7B2Vnik&t=2024-03-24T19%3A26%3A15.525Z" alt="John Doe profile picture" />
+    <img class="section__pic-container transition transform hover:scale-110 lg:mr-32 lg:mt-6 sm:mt-12" src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/Avatar%20(3).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvQXZhdGFyICgzKS5wbmciLCJpYXQiOjE3MTEzMDgzNzUsImV4cCI6MTc0Mjg0NDM3NX0.dVRpEkB4CD8kSeRq7DMVKOnuSXaj1F63OB9I7B2Vnik&t=2024-03-24T19%3A26%3A15.525Z" alt="" />
     <div class="section__text lg:text-left">
         <h1 class="title mt-2">Yassir Ouadghiri</h1>
         <p class="section__text__p2">Développeur Web</p>
@@ -24,15 +24,27 @@ let {data : tableaufilm, error} = await supabase
                 Contact Info
             </button>
         </div>
-        <div id="socials-container" class="mt-4 lg:mt-0">
+        <div id="socials-container">
             <img src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/linkedin.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbGlua2VkaW4ucG5nIiwiaWF0IjoxNzExMjUzNzkwLCJleHAiOjE3NDI3ODk3OTB9.OJFe70zQyK-DVrZ62HUuBybw8QEYD7yjv69A1QW4GRw&t=2024-03-24T04%3A16%3A29.905Z" alt="LinkedIn" class="icon mr-2">
             <img src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/github.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvZ2l0aHViLnBuZyIsImlhdCI6MTcxMTI1MzgxNiwiZXhwIjoxNzQyNzg5ODE2fQ.1p1X3-sX5DLlpntOi5i_4fZazJhwoOv9cPkW3eReCYQ&t=2024-03-24T04%3A16%3A56.728Z" alt="Github" class="icon"/>
         </div>
     </div>
     </section>
+    
     <section id="experience">
       <p class="section__text__p1">Découvrez mon</p>
       <h1 class="title mb-10 font-bold">Experience</h1>
+      <div class="login-box mb-10 text-center">
+      <form>
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Voir mes Projets
+        </a>
+      </form>
+      </div>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container mb-10">
@@ -124,28 +136,28 @@ let {data : tableaufilm, error} = await supabase
       </div>
     </section>
     <div>
-      <p class="section__text__p1">Naviguer à travers</p>
+      <p class="section__text__p1 mt-8">Naviguer à travers</p>
       <h1 class="title mb-10 font-bold">Mes Projets</h1>
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         <AfficheFilm v-for="film in tableaufilm" v-bind="film" />
       </div>
     </div>
 
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
+      <p class="section__text__p1 mt-8">En quelques cliques</p>
+      <h1 class="title mb-10 font-bold">Contactez moi</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img
-            src="#"
+            src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/email.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvZW1haWwucG5nIiwiaWF0IjoxNzExNDEyMjU5LCJleHAiOjE3NDI5NDgyNTl9.FqzFKUSTHmgzxeyI_NAB6iBs5y4Eycxg1gw3P3_4K5Y&t=2024-03-26T00%3A17%3A40.384Z"
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:yassir.ouadghiri@gmail.com">Example@gmail.com</a></p>
+          <p><a href="mailto:yassir.ouadghiri@gmail.com">Yassir.ouadghiri@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img
-            src="#"
+            src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/linkedin.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbGlua2VkaW4ucG5nIiwiaWF0IjoxNzExMjUzNzkwLCJleHAiOjE3NDI3ODk3OTB9.OJFe70zQyK-DVrZ62HUuBybw8QEYD7yjv69A1QW4GRw&t=2024-03-24T04%3A16%3A29.905Z"
             alt="LinkedIn icon"
             class="icon contact-icon"
           />
@@ -154,17 +166,7 @@ let {data : tableaufilm, error} = await supabase
       </div>
     </section>
 
-    <div class="login-box">
-      <form>
-        <a href="#">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Voir les Projets
-        </a>
-      </form>
-    </div> 
+     
   </main>
 </template>
 
@@ -209,24 +211,24 @@ a,
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: #03e9f4;
+  color: rgb(151, 61, 236);
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
+  margin-top: 10px;
+  letter-spacing: 4px;
 }
 
 .login-box a:hover {
-  background: #03e9f4;
+  background: rgb(151, 61, 236);
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
+  box-shadow: 0 0 5px rgb(151, 61, 236),
+              0 0 25px rgb(151, 61, 236),
+              0 0 50px rgb(151, 61, 236),
+              0 0 100px rgb(151, 61, 236);
 }
 
 .login-box a span {
@@ -239,7 +241,7 @@ a,
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
+  background: linear-gradient(90deg, transparent, rgb(151, 61, 236));
   animation: btn-anim1 1s linear infinite;
 }
 
@@ -257,7 +259,7 @@ a,
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
+  background: linear-gradient(180deg, transparent, rgb(151, 61, 236));
   animation: btn-anim2 1s linear infinite;
   animation-delay: .25s
 }
@@ -276,7 +278,7 @@ a,
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
+  background: linear-gradient(270deg, transparent, rgb(151, 61, 236));
   animation: btn-anim3 1s linear infinite;
   animation-delay: .5s
 }
@@ -295,7 +297,7 @@ a,
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
+  background: linear-gradient(360deg, transparent, rgb(151, 61, 236));
   animation: btn-anim4 1s linear infinite;
   animation-delay: .75s
 }
@@ -325,10 +327,8 @@ section {
 /* PROFILE SECTION */
 
 #profile {
-  margin-top: 10px;
   display: flex;
   justify-content: center;
-  height: auto;
 }
 
 .section__pic-container {
@@ -480,7 +480,6 @@ background-size: contain;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
 }
 
 .contact-info-upper-container {
@@ -513,4 +512,108 @@ background-size: contain;
 .email-icon {
   height: 2.5rem;
 }
+
+/* media queries */
+@media screen and (max-width: 1400px) {
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+  #profile,
+  .section-container {
+    display: block;
+  }
+  .arrow {
+    display: none;
+  }
+  section,
+  .section-container {
+    height: fit-content;
+  }
+  section {
+    margin: 0 5%;
+  }
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+  .about-containers {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  article {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .contact-info-container {
+    margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .section__pic-container {
+    width: auto;
+    height: 46vw;
+    justify-content: center;
+  }
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .text-container {
+    text-align: justify;
+  }
+}
+
+
+
 </style>

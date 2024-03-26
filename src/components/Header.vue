@@ -9,11 +9,11 @@
       <!-- Logo -->
 
       <img style="width: 8%; height: auto; " src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/logo-portfolioV1.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbG9nby1wb3J0Zm9saW9WMS5wbmciLCJpYXQiOjE3MTEzMjkzMjIsImV4cCI6MTc0Mjg2NTMyMn0.nyYVw632oKHb46diGCgu4V-KMwmeBeI78cBaeQPiayg&t=2024-03-25T01%3A15%3A23.340Z" alt="Logo Yassir Ouadghiri">
-      <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
-        <ul class="flex font-semibold justify-between gap-auto lg:gap-20 md:gap-20">
-          <router-link to="/" class="text-black md:px-4 md:py-2 hover:text-indigo-400 hover:underline">À propos de moi</router-link>
-          <router-link to="/projets" class="text-black md:px-4 md:py-2 hover:text-indigo-400 hover:underline">Mes Projets</router-link>
-          <router-link to="/contact" class="text-black md:px-4 md:py-2 hover:text-indigo-400 hover:underline">Contact</router-link>
+      <div class="text-gray-500 order-3 w-full md:w-auto md:order-2 nav-links-container">
+        <ul class="nav-links flex font-semibold justify-between gap-auto lg:gap-20 md:gap-20">
+          <router-link to="/" class="text-black md:px-4 md:py-2 hover:text-indigo-400 a">À propos de moi</router-link>
+          <router-link to="/projets" class="text-black md:px-4 md:py-2 hover:text-indigo-400 a">Projets</router-link>
+          <router-link to="/contact" class="text-black md:px-4 md:py-2 hover:text-indigo-400 a">Contact</router-link>
         </ul>
       </div>
 
@@ -78,6 +78,36 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* nav links */
+.nav,
+.nav-links {
+  display: flex;
+}
+
+.nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.a {
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+.a:hover {
+  color: rgb(151, 61, 236);
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
 }
 </style>
 
