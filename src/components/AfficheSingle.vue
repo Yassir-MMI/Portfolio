@@ -13,7 +13,7 @@ import { onMounted } from 'vue'; // Importer le hook onMounted
       <div class="max-w-xl mx-auto py-8">
         <h1 class="text-3xl text-center mb-4">{{ titre }}</h1>
         <div class="h-1 w-20 mx-auto mb-6">
-          <img :src="img" alt="Image principale de l'article" class="mx-auto w-2/3 rounded-lg mb-6">
+          <img :src="img" alt="Image principale de l'article" class="mx-auto w-2/3 block rounded-lg mb-6 sm:text-center">
         </div>
         </div>
 
@@ -22,16 +22,19 @@ import { onMounted } from 'vue'; // Importer le hook onMounted
         <div class="text-center">
           <!-- Bloc de texte et image -->
           <div class="flex-col ">
+            <h3 class="title mb-4 font-bold">Phase d'idéation</h3>
             <p class="mb-4 mx-7 tracking-wide">{{ concept }}</p>
-            <img :src="img_concept" alt="Image détaillée de l'article" class="max-w-2xl mx-auto block rounded-lg mb-4">
+            <img :src="img_concept" alt="Image détaillée de l'article" class="w-auto mx-auto block rounded-lg mb-4">
           </div>
           <div class="flex-col">
+            <h3 class="title mb-4 font-bold">Phase technique</h3>
             <p class="mb-4 mx-7 tracking-wide">{{technique}}</p>
-            <img :src="img_technique" alt="Image détaillée de l'article" class="max-w-2xl mx-auto block rounded-lg mb-4">  
+            <img :src="img_technique" alt="Image détaillée de l'article" class="w-auto mx-auto block rounded-lg mb-4">  
           </div>
           <div class="flex-col">
+            
             <p class="mb-4 mx-7 tracking-wide">{{realisation}}</p>
-            <img :src="img_realisation" alt="" class="max-w-2xl rounded-lg mx-auto block mb-4">
+            <img :src="img_realisation" alt="" class="w-auto rounded-lg mx-auto block mb-4">
           </div>
         </div>
       </div>
@@ -42,7 +45,7 @@ import { onMounted } from 'vue'; // Importer le hook onMounted
           <span></span>
           <span></span>
           <span></span>
-          Voir le Projets
+          Voir le Projet
         </a>
       </form>
       </div>
@@ -71,11 +74,6 @@ h1 {
   font-size: 2.5rem;
 }
 
-@media screen and (max-width: 600px) {
-  *{margin: 0 2px;
-  padding: 0;}
-  
-}
 /*en tête de scroll*/
 p {
   font-size: 17px;
@@ -206,5 +204,18 @@ a,
   50%,100% {
     bottom: 100%;
   }
+}
+
+.title {
+  font-size: 1.5rem;
+  text-align: left;
+  color: rgb(85, 85, 85);
+  font-family: 'Jost', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-left: 1.1rem;
+}
+
+p {
+  color: rgb(85, 85, 85);
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 </style>
