@@ -124,7 +124,6 @@ p {
 .fill {
   background: #ae65fd;
   color: rgba(255,255,255,0.95);
-  border: 1px solid #ae65fd;
   filter: drop-shadow(0);
   font-weight: bold;
   transition: all .3s ease; 
