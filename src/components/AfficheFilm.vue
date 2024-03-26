@@ -108,7 +108,6 @@ p {
 .outline {
   background: transparent;
   color: #ae65fd;
-  border: 1px solid #ae65fd;
   transition: all .3s ease;
   margin-right: 10px;
   font-weight: bold;
