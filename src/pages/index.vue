@@ -167,7 +167,6 @@ let {data : tableaufilm, error} = await supabase
         </div>
       </div>
     </section>
-
      
   </main>
 </template>
@@ -614,7 +613,5 @@ background-size: contain;
     text-align: justify;
   }
 }
-
-
 
 </style>

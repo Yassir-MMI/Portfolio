@@ -4,7 +4,6 @@
             <ul class="nav-links flex font-semibold justify-center gap-auto lg:gap-20 md:gap-20">
                 <router-link to="/" class="text-gray-500 md:px-4 md:py-2 hover:text-indigo-400 a">À propos de moi</router-link>
                 <router-link to="/projets" class="text-gray-500 md:px-4 md:py-2 hover:text-indigo-400 a">Projets</router-link>
-                <router-link to="/contact" class="text-gray-500 md:px-4 md:py-2 hover:text-indigo-400 a">Contact</router-link>
             </ul>
         </div>
         <div class="mx-auto w-full max-w-screen-xl mt-3">

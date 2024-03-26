@@ -13,7 +13,6 @@
         <ul class="nav-links flex font-semibold justify-between gap-auto lg:gap-20 md:gap-20">
           <router-link to="/" class="text-black md:px-4 md:py-2 hover:text-indigo-400 a">À propos de moi</router-link>
           <router-link to="/projets" class="text-black md:px-4 md:py-2 hover:text-indigo-400 a">Projets</router-link>
-          <a href="#contact" class="text-black md:px-4 md:py-2 hover:text-indigo-400 a">Contact</a>
         </ul>
       </div>
 
