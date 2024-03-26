@@ -126,6 +126,7 @@ p {
   color: rgba(255,255,255,0.95);
   filter: drop-shadow(0);
   font-weight: bold;
+  border: 2px solid #ae65fd;
   transition: all .3s ease; 
 }
 

@@ -17,12 +17,14 @@ let {data : tableaufilm, error} = await supabase
         <h1 class="title mt-2">Yassir Ouadghiri</h1>
         <p class="section__text__p2">Développeur Web</p>
         <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
-                Voir mon CV
+            <button class="btn btn-color-2" >
+                <a href="../assets/CV.pdf" download="CV.pdf">Voir mon CV</a>
             </button>
-            <button class="btn btn-color-1" onclick="location.href='./contact'">
-                Contact Info
-            </button>
+            <button class="btn btn-color-1">
+                <a href="#contact">
+                  Contact Info
+                </a>
+                </button>
         </div>
         <div id="socials-container">
             <img src="https://iqdwkyjapwrjscpnkejc.supabase.co/storage/v1/object/sign/img/linkedin.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWcvbGlua2VkaW4ucG5nIiwiaWF0IjoxNzExMjUzNzkwLCJleHAiOjE3NDI3ODk3OTB9.OJFe70zQyK-DVrZ62HUuBybw8QEYD7yjv69A1QW4GRw&t=2024-03-24T04%3A16%3A29.905Z" alt="LinkedIn" class="icon mr-2">
@@ -161,7 +163,7 @@ let {data : tableaufilm, error} = await supabase
             alt="LinkedIn icon"
             class="icon contact-icon"
           />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+          <p><a href="https://www.linkedin.com/in/yassir-ouadghiri-64a619256/">LinkedIn</a></p>
         </div>
       </div>
     </section>
@@ -183,7 +185,7 @@ let {data : tableaufilm, error} = await supabase
   /* Ajoutez d'autres variantes de police si nécessaire */
 }
 
-html {
+* {
   scroll-behavior: smooth;
 }
 
@@ -565,7 +567,6 @@ background-size: contain;
     height: 40vh;
   }
   #profile {
-    height: 83vh;
     margin-bottom: 0;
   }
   article {
