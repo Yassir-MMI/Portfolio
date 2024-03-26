@@ -9,15 +9,14 @@ defineProps <Database["public"]["Tables"]["Projets"]["Row"] >()
         
             <div class="container">
             <div class="wrapper">
-            <img class="banner-image" :src="img">
-            <h1>{{titre}}</h1>
+            <img class="banner-image object-cover" :src="img">
             </div>
             <div class="button-wrapper"> 
-            <button class="btn outline">LE PROJET</button>
+            <button class="btn outline"><a :href="lien">LE PROJET</a></button>
             <RouterLink :to="`/projets/${id}`"><button class="btn fill">VOIR PLUS</button></RouterLink> 
             </div>
         </div>
-        
+     
     </div>
     
 </template>

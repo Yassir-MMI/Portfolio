@@ -38,7 +38,7 @@ let {data : tableaufilm, error} = await supabase
       <h1 class="title mb-10 font-bold">Experience</h1>
       <div class="login-box mb-10 text-center">
       <form>
-        <a href="#">
+        <a href="/projets">
           <span></span>
           <span></span>
           <span></span>

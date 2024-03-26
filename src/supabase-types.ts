@@ -11,24 +11,42 @@ export type Database = {
     Tables: {
       Projets: {
         Row: {
+          concept: string | null
           description_card: string | null
           id: number
           img: string | null
+          img_concept: string | null
+          img_realisation: string | null
+          img_technique: string | null
           lien: string | null
+          realisation: string | null
+          technique: string | null
           titre: string | null
         }
         Insert: {
+          concept?: string | null
           description_card?: string | null
           id?: number
           img?: string | null
+          img_concept?: string | null
+          img_realisation?: string | null
+          img_technique?: string | null
           lien?: string | null
+          realisation?: string | null
+          technique?: string | null
           titre?: string | null
         }
         Update: {
+          concept?: string | null
           description_card?: string | null
           id?: number
           img?: string | null
+          img_concept?: string | null
+          img_realisation?: string | null
+          img_technique?: string | null
           lien?: string | null
+          realisation?: string | null
+          technique?: string | null
           titre?: string | null
         }
         Relationships: []
