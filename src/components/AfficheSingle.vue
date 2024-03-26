@@ -6,32 +6,36 @@ import { onMounted } from 'vue'; // Importer le hook onMounted
 </script>
   
 <template>
+
+    
     <div class="bg-gray-100 min-h-screen pb-10">
       <!-- Titre et image principale -->
       <div class="max-w-xl mx-auto py-8">
-        <h1 class="text-3xl font-bold text-center mb-4">{{ titre }}</h1>
-        <img :src="img" alt="Image principale de l'article" class="mx-auto rounded-lg mb-6">
-      </div>
+        <h1 class="text-3xl text-center mb-4">{{ titre }}</h1>
+        <div class="h-1 w-20 mx-auto mb-6">
+          <img :src="img" alt="Image principale de l'article" class="mx-auto w-2/3 rounded-lg mb-6">
+        </div>
+        </div>
 
       <!-- Détails de l'article -->
-      <div class="max-w-2xl mx-auto">
-        <div class=" ">
+      <div class="mx-auto">
+        <div class="text-center">
           <!-- Bloc de texte et image -->
           <div class="flex-col ">
-            <p class="mb-4 tracking-wide">{{ concept }}</p>
-            <img :src="img_concept" alt="Image détaillée de l'article" class="rounded-lg mb-4">
+            <p class="mb-4 mx-7 tracking-wide">{{ concept }}</p>
+            <img :src="img_concept" alt="Image détaillée de l'article" class="max-w-2xl mx-auto block rounded-lg mb-4">
           </div>
           <div class="flex-col">
-            <p class="mb-4 tracking-wide">{{technique}}</p>
-            <img :src="img_technique" alt="Image détaillée de l'article" class="rounded-lg mb-4">  
+            <p class="mb-4 mx-7 tracking-wide">{{technique}}</p>
+            <img :src="img_technique" alt="Image détaillée de l'article" class="max-w-2xl mx-auto block rounded-lg mb-4">  
           </div>
           <div class="flex-col">
-            <p class="mb-4 tracking-wide">{{realisation}}</p>
-            <img :src="img_realisation" alt="" class="rounded-lg mb-4">
+            <p class="mb-4 mx-7 tracking-wide">{{realisation}}</p>
+            <img :src="img_realisation" alt="" class="max-w-2xl rounded-lg mx-auto block mb-4">
           </div>
         </div>
       </div>
-      <div class="login-box mt-10 text-center">
+      <div class="login-box mt-10 mb-10 text-center">
       <form>
         <a :href="lien">
           <span></span>
@@ -42,7 +46,7 @@ import { onMounted } from 'vue'; // Importer le hook onMounted
         </a>
       </form>
       </div>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" :src="description_card" allowfullscreen></iframe>
+      <iframe class="mx-auto w-full block" style="text-align: center; border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" :src="description_card" allowfullscreen></iframe>
     </div>
     
 </template>
@@ -50,6 +54,28 @@ import { onMounted } from 'vue'; // Importer le hook onMounted
 
 
 <style scoped>
+@font-face {
+  font-family: 'Poppins';
+  src: url('@/assets/fonts/Poppins/Poppins-Regular.ttf') format('ttf'),
+  /* Ajoutez d'autres variantes de police si nécessaire */
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('@/assets/fonts/Jost/Jost.ttf') format('ttf'),
+  /* Ajoutez d'autres variantes de police si nécessaire */
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  *{margin: 0 2px;
+  padding: 0;}
+  
+}
 /*en tête de scroll*/
 p {
   font-size: 17px;
